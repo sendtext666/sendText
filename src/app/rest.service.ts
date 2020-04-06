@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestService {
-  url = `http://localhost:3000`;
+  url = `https://sendtext-api.herokuapp.com`;
 
   constructor(private http: HttpClient) { }
 
