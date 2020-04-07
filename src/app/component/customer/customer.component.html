@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let c of customers; let i = index"> -->
+      {{c.name}} - {{c.phoneNumber}} 
+      <button class="button" (click)="sendText(c.phoneNumber)">send Text</button>
+      <select (change)="messageSelect($event.target.value)"> -->
+        <option *ngFor="let m of messages" [value]="m.name">{{m.name}}</option>
+      </select> 
+    </li> 
+
+</ul>

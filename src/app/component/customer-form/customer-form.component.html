@@ -1,0 +1,17 @@
+<form #customerForm="ngForm" (ngSubmit)="createCustomer(customerForm)">
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input name="name" type="text" [(ngModel)]="name">
+    </div>
+  
+    <div>
+      <label for="phoneNumber">
+        phoneNumber
+      </label>
+      <input name="phoneNumber" type="text" [(ngModel)]="phoneNumber">
+    </div>
+  
+    <button class="button" type="submit">Add</button>
+ </form>
