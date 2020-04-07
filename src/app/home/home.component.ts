@@ -10,6 +10,8 @@ import {RestService} from '../rest.service'
 export class HomeComponent implements OnInit {
   customers = [];
   phoneNumber = '';
+  messageName = '';
+  messagBody = '';
   name = '';
   messages = [];
   activeMessage = this.messages[0];
@@ -55,5 +57,17 @@ export class HomeComponent implements OnInit {
 
   messageSelect(message) {
     this.activeMessage = message;
+  }
+
+  createMessages(data) {
+    let userMessages = {
+      name: data.value.name,
+      body: data.value.body,
+      user: `1`
+    }
+    this.restService.createMessages(userMessages)
+    .subscribe((data: any[])=>{
+      console.log(data, "message created");
+    }) 
   }
 }

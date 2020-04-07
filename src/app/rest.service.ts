@@ -35,4 +35,13 @@ export class RestService {
 
     return this.http.post(`${this.url}/sendText`, data);
   }
+
+  createMessages(messages) {
+    const data = {
+      "body": messages.body,
+      "name": messages.name,
+      "user": messages.user 
+    }
+    return this.http.post(`${this.url}/messages`, data);
+  }
 }

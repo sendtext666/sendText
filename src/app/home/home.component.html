@@ -1,17 +1,17 @@
 <p>hello</p>
 <ul>
-    <li *ngFor="let c of customers; let i = index">
+    <li *ngFor="let c of customers; let i = index"> -->
       {{c.name}} - {{c.phoneNumber}} 
       <button class="button" (click)="sendText(c.phoneNumber)">send Text</button>
-      <select (change)="messageSelect($event.target.value)">
+      <select (change)="messageSelect($event.target.value)"> -->
         <option *ngFor="let m of messages" [value]="m.name">{{m.name}}</option>
-      </select>
-    </li>
+      </select> 
+    </li> 
 
 </ul>
 
 
-<form #myform="ngForm" (ngSubmit)="createCustomer(myform)">
+<form #customerForm="ngForm" (ngSubmit)="createCustomer(customerForm)">
     <div>
       <label for="name">
         Name
@@ -24,6 +24,24 @@
         phoneNumber
       </label>
       <input name="phoneNumber" type="text" [(ngModel)]="phoneNumber">
+    </div>
+  
+    <button class="button" type="submit">Add</button>
+ </form>
+
+<form #messageForm="ngForm" (ngSubmit)="createMessages(messageForm)">
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input name="name" type="text" [(ngModel)]="messageName">
+    </div>
+  
+    <div>
+      <label for="body">
+        body
+      </label>
+      <input name="body" type="text" [(ngModel)]="messagBody">
     </div>
   
     <button class="button" type="submit">Add</button>
