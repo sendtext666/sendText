@@ -1,0 +1,17 @@
+<form #messageForm="ngForm" (ngSubmit)="createMessages(messageForm)">
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input name="name" type="text" [(ngModel)]="messageName">
+    </div>
+  
+    <div>
+      <label for="body">
+        body
+      </label>
+      <input name="body" type="text" [(ngModel)]="messagBody">
+    </div>
+  
+    <button class="button" type="submit">Add</button>
+ </form>
